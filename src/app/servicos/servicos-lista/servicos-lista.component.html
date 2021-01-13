@@ -1,0 +1,46 @@
+<h1 class="mt-4">Serviços</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Lista de Servicos</li>
+</ol>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="novoCadastro()">
+                <i class="fa fa-plus"></i> Novo
+            </button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Cliente</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let servico of servicos">
+                        <td>{{ servico.idServico }}</td>
+                        <td>{{ servico.descricaoServico }}</td>
+                        <td>{{ servico.valorServico }}</td>
+                        <td>{{ servico.idCliente.nomeCliente }}</td>
+                        <td>
+                        <button type="button" class="btn btn-success" (click)="carregar(servico)">
+                            <i class="fa fa-arrow-alt-circle-right"></i> Carregar
+                        </button>
+                        
+                        <button type="button" class="btn btn-danger" (click)="excluir(servico)">
+                            <i class="fa fa-arrow-alt-circle-left"></i> Excluir
+                        </button>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
